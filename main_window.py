@@ -1,6 +1,6 @@
 import curses,datetime
 # Aux functions - Start
-def text_color(c_color:int):
+def text_color(c_color:int) -> int:
     curses.init_pair(1,c_color, curses.COLOR_BLACK)
     return curses.color_pair(1)
 def coord_center(string) -> tuple:
