@@ -20,11 +20,8 @@ def main_screen() -> str:
     return stdscr.getkey()
 
 def clock_screen() -> None:
-    
     stdscr = curses.initscr()
     curses.curs_set(0)
-    
-    
     while True:    
         stdscr.clear()
         dt_obj = datetime.datetime.now()
@@ -34,7 +31,6 @@ def clock_screen() -> None:
         stdscr.addstr(row, column, dt_string, text_color(curses.COLOR_BLUE)) 
         stdscr.refresh()
         curses.napms(1000)
-        
 
 def default_screen() -> None:
     my_string = 'Hello World!'
@@ -60,7 +56,7 @@ def main(*args) -> None:
             case _:
                 default_screen()
                 continue
-
+            
 try:         
     curses.wrapper(main)
 except KeyboardInterrupt:
