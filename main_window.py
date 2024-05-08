@@ -3,6 +3,7 @@ import curses,datetime
 def text_color(c_color:int) -> int:
     curses.init_pair(1,c_color, curses.COLOR_BLACK)
     return curses.color_pair(1)
+
 def coord_center(string) -> tuple:
     row = int((curses.LINES/2).__round__(1))
     col = int((curses.COLS/2 - (string.__len__()/2)).__round__(1))
